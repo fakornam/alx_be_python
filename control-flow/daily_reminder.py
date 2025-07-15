@@ -1,7 +1,7 @@
 # Prompt the user for input
-task = input("Enter your priority task for today: ")
-priority = input("Set the task's priority (high/medium/low): ").lower()
-time_bound = input("Is this task time-bound? (yes/no): ").lower()
+task = input("Enter your priority task for today:")
+priority = input("Set the task's priority (high/medium/low):")
+time_bound = input("Is this task time-bound? (yes/no):")
 
 # Match case block to handle priority levels
 match priority:
