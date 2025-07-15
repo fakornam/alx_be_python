@@ -15,9 +15,9 @@ match priority:
         reminder = f"Note: '{task}' has an unknown priority level"
 
 # Add time sensitivity info
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     reminder += " that requires immediate attention today!"
-elif priority.lower() == "low":
+elif priority == "low":
     reminder += ". Consider completing it when you have free time."
 
 # Display the final message
