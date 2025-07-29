@@ -1,28 +1,22 @@
-import sys
-from bank_account import BankAccount
+# simple_calculator.py
 
-def main():
-    account = BankAccount(100)  # Example starting balance
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <command>:<amount>")
-        print("Commands: deposit, withdraw, display")
-        sys.exit(1)
+class SimpleCalculator:
+    """A simple calculator class that supports basic arithmetic operations."""
 
-    command, *params = sys.argv[1].split(':')
-    amount = float(params[0]) if params else None
+    def add(self, a, b):
+        """Return the addition of a and b."""
+        return a + b
 
-    if command == "deposit" and amount is not None:
-        account.deposit(amount)
-        print(f"Deposited: ${amount}")
-    elif command == "withdraw" and amount is not None:
-        if account.withdraw(amount):
-            print(f"Withdrew: ${amount}")
-        else:
-            print("Insufficient funds.")
-    elif command == "display":
-        account.display_balance()
-    else:
-        print("Invalid command.")
+    def subtract(self, a, b):
+        """Return the subtraction of b from a."""
+        return a - b
 
-if __name__ == "__main__":
-    main()
+    def multiply(self, a, b):
+        """Return the multiplication of a and b."""
+        return a * b
+
+    def divide(self, a, b):
+        """Return the division of a by b. Returns None if b is zero."""
+        if b == 0:
+            return None
+        return a / b
